@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Menu</title>
+    <style>
+        #menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background: #222;
+            position: fixed;
+            width: 300px;
+            left: -100%;
+            top: 0;
+            height: 100%;
+            transition: all 0.4s ease-in;
+        }
+        #menu.show {
+            left: 0;
+        }
+
+        #menu li {}
+
+        #menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 13px 20px;
+        }
+
+        #toggle-menu {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            border: 0 none;
+            background: #1a7def;
+            color: #fff;
+            width: 80px;
+            height: 80px;
+            font-size: 20px;
+            border-radius: 100%;
+            cursor: pointer;
+        }        
+    </style>
+</head>
+<body>
+    
+    <ul id="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+
+    <button id="toggle-menu">Menu</button>
+
+    <script>
+        const menu = document.getElementById("menu");
+        const menuToggleButton = document.getElementById("toggle-menu");
+
+        // if local show , add show class
+        // const menuStatus = localStorage.getItem("menu");
+
+        // if ( menuStatus === "show" ) {
+        //     menu.classList.add("show");
+        // }
+
+        menuToggleButton.addEventListener("click", function(event) {
+            menu.classList.toggle("show");
+
+            // const className = menu.classList.contains("show") ? "show" : "hide";
+            // localStorage.setItem("menu", className);
+        });
+
+    </script>
+</body>
+</html>
